@@ -44,7 +44,7 @@ public class sorting {
         }
 
         public static boolean isSorted(int[] arr){
-            for (int x:arr){
+            for (int x=0;x<arr.length;x++){
                 if (arr[x]>arr[x+1]){
                     return false;
                 }
@@ -63,19 +63,18 @@ public class sorting {
             }
             return (s1==s2);
         }
-
+/////// gotta fix
         public static void selection(int[] arr) {
-            boolean swap = true;
-            while (swap) {
-                swap=false;
-                for(int i=0; i<arr.length;i++){
-                    for(int x=0;x<arr.length;x++){
-                        if(arr[i]>arr[x]){
-                            swap(arr,arr[i],arr[x]);
-                        }
+            int low=arr[0];
+            for(int i=0;i<arr.length;i++){
+                low= arr[i];
+                for (int j=0; j<arr.length;j++){
+                    if (arr[low]>arr[j]){
+                        low=j;
                     }
                 }
-
+                ///////find a way to switch low bc doesnt work need indexxxxxxxx
+                swap(arr,low,i);
             }
         }
     }
