@@ -4,7 +4,7 @@ public class Runner {
 
     public static void main(String[] args) {
         System.out.println("Before: ");
-        int[] arr= sorting.randArr(7);
+        double[] arr= sorting.randDoubleArr(7);
         for (int a=0;a<arr.length;a++){
             System.out.print(" "+ arr[a]);
         }
