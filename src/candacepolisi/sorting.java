@@ -26,7 +26,7 @@ public class sorting {
         while (swap) {
             swap = false;
             for (int i = 0; i < arr.length - 1; i++) {
-                if (arr[i] > arr[i + 1]) {
+                if (arr[i].compareTo(arr[i + 1])>0) {
                     swap(arr, i, i + 1);
 
                     swap = true;
@@ -55,7 +55,7 @@ public class sorting {
 
     public static void checker() {
         long time = System.nanoTime();
-        bubbleSort(randIntArr(5));
+        //bubbleSort();
         time = System.nanoTime() - time;
         System.out.println("Time taken: " + time);
     }
@@ -93,13 +93,33 @@ public class sorting {
     }
 
 
-        public static void selection(double[] arr){
-            int l = 0;
-            for (int i = 0; i < arr.length; i++) {
-                l = min(arr, i);
-                swap(arr, i, l);
-            }
+    public static void selection(double[] arr) {
+        int l = 0;
+        for (int i = 0; i < arr.length; i++) {
+            l = min(arr, i);
+            swap(arr, i, l);
         }
+    }
+
+    public static void selection(int[] arr) {
+        double min;
+        int index;
+        for (int i = 0; i < arr.length; i++) {
+            min = arr[i];
+            index = i;
+            for (int j = i; j < arr.length; j++) {
+                if (arr[j] < min) {
+                    min = arr[j];
+                    index = j;
+                }
+            }
+            if (arr[i] > min) {
+                swap(arr, i, index);
+            }
+
+
+        }
+
     }
 }
 
