@@ -26,7 +26,7 @@ public class sorting {
         while (swap) {
             swap = false;
             for (int i = 0; i < arr.length - 1; i++) {
-                if (arr[i].compareTo(arr[i + 1])>0) {
+                if (arr[i].compareTo(arr[i + 1]) > 0) {
                     swap(arr, i, i + 1);
 
                     swap = true;
@@ -53,16 +53,29 @@ public class sorting {
         return arr;
     }
 
-    public static void checker() {
-        long time = System.nanoTime();
-        //bubbleSort();
-        time = System.nanoTime() - time;
-        System.out.println("Time taken: " + time);
-    }
+
 
     public static boolean isSorted(int[] arr) {
-        for (int x = 0; x < arr.length; x++) {
+        for (int x = 0; x < arr.length-1; x++) {
             if (arr[x] > arr[x + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean isSorted(double[] arr) {
+        for (int x = 0; x < arr.length-1; x++) {
+            if (arr[x] > arr[x + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean isSorted(String[] arr) {
+        for (int x = 0; x < arr.length-1; x++) {
+            if (arr[x].compareTo(arr[x + 1])>=0){
                 return false;
             }
         }
@@ -94,33 +107,41 @@ public class sorting {
 
 
     public static void selection(double[] arr) {
-        int l = 0;
+        int index = 0;
         for (int i = 0; i < arr.length; i++) {
-            l = min(arr, i);
-            swap(arr, i, l);
-        }
-    }
-
-    public static void selection(int[] arr) {
-        double min;
-        int index;
-        for (int i = 0; i < arr.length; i++) {
-            min = arr[i];
-            index = i;
-            for (int j = i; j < arr.length; j++) {
-                if (arr[j] < min) {
-                    min = arr[j];
-                    index = j;
-                }
-            }
-            if (arr[i] > min) {
+            index = min(arr, i);
+            if (arr[i] > arr[index]) {
                 swap(arr, i, index);
             }
-
-
         }
+    }
 
+    public static void insertion(int[] arr) {
+        int index = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (i == 0) {
+                if (!(arr[i] < arr[i + 1])) {
+                    while ((!(arr[i] < arr[i + 1]))) {
+                        index++;
+                        if ((!((arr[index] < arr[index + 1])))) {
+                            swap(arr, i, index);
+                        }
+                    }
+                }
+            }
+            if ((i > 0) && (i<arr.length-2)) {
+                if (!((arr[i - 1] < arr[i]) && (arr[i] < arr[i + 1]))) {
+                    while ((!((arr[i - 1] < arr[i]) && (arr[i] < arr[i + 1])))) {
+                        index++;
+                        if ((!((arr[index - 1] < arr[index]) && (arr[index] < arr[index + 1])))) {
+                            swap(arr, i, index);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
+
 
 
