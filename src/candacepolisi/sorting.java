@@ -1,6 +1,7 @@
 package candacepolisi;
 
 public class sorting {
+
 ///4 int
     public static void swap(int arr[], int a, int b) {
         int temp = arr[a];
@@ -36,7 +37,6 @@ public class sorting {
         }
     }
 
-
     public static int[] randIntArr(int count) {
         int[] arr = new int[count];
         for (int i = 0; i < count; i++) {
@@ -53,6 +53,21 @@ public class sorting {
         return arr;
     }
 
+    public static String[] randStringArr(int num, int length){
+        String[] arr= new String[num];
+        while(num>0){
+            int i= 0;
+            String s= "";
+            while(i<length) {
+                char c = (char) (Math.random() * 26 + 97);
+                s = s + c;
+                i++;
+            }
+            num--;
+            arr[num]=s;
+        }
+        return arr;
+    }
 
 
     public static boolean isSorted(int[] arr) {
@@ -89,10 +104,23 @@ public class sorting {
         }
         int s2 = 0;
         for (int x=0;x<after.length;x++) {
-            s1 += after[x];
+            s2 += after[x];
         }
         return (s1 == s2);
     }
+
+    public static boolean checkSum(double[] before, double[] after) {
+        int s1 = 0;
+        for (int x=0;x<before.length;x++) {
+            s1 += before[x];
+        }
+        int s2 = 0;
+        for (int x=0;x<after.length;x++) {
+            s2 += after[x];
+        }
+        return (s1 == s2);
+    }
+
 ///4 d
     public static int min(double arr[], int ind) {
         int minInd = ind;
@@ -140,7 +168,7 @@ public class sorting {
     //4 int
     public static int[] copyArray(int[] arr){
         int[] arr2= new int[arr.length];
-        for (int x: arr){
+        for (int x=0;x<arr.length;x++){
             arr2[x]=arr[x];
         }
         return arr2;
