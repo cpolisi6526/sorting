@@ -1,7 +1,7 @@
 package candacepolisi;
 
 public class Runner {
-
+//// the checkers calculate the am of time taken to sort list
     public static void checker(double[] arr) {
         long time = System.nanoTime();
         sorting.selection(arr);
@@ -23,7 +23,7 @@ public class Runner {
         System.out.println("Time taken: " + time);
     }
 
-    public static void selectionrunner(double[] arr){
+    public static void selectionRunner(double[] arr){
         System.out.println("Before: ");
        //   double[] arr= sorting.randDoubleArr(7);
             // String arr[]= {"i","am","very","i"};
@@ -80,7 +80,7 @@ public class Runner {
       //  insertionRunner(new int[]{2, 5, 1, 7, 9, 3, 4});
         insertionRunner(sorting.randIntArr(7));
         System.out.println("\n Selection: ");
-       selectionrunner(new double[]{2.1,3.2,5.2,0.1,0.2});
+       selectionRunner(new double[]{2.1,3.2,5.2,0.1,0.2});
         System.out.println("\n Bubble Sort:  ");
       //  bubbleRunner(new String[]{"i", "am", "very", "Hungry"});
         bubbleRunner(sorting.randStringArr(7,5));

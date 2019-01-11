@@ -1,7 +1,7 @@
 package candacepolisi;
 
 public class sorting {
-
+//// swap switches two values in an array for my purposes a should b the bigger number
 ///4 int
     public static void swap(int arr[], int a, int b) {
         int temp = arr[a];
@@ -21,7 +21,7 @@ public class sorting {
         arr[b] = temp;
     }
 
-
+///// sorts string arrays
     public static void bubbleSort(String[] arr) {
         boolean swap = true;
         while (swap) {
@@ -37,6 +37,7 @@ public class sorting {
         }
     }
 
+   /// rand...Arr creates a random arr for each medium
     public static int[] randIntArr(int count) {
         int[] arr = new int[count];
         for (int i = 0; i < count; i++) {
@@ -69,7 +70,8 @@ public class sorting {
         return arr;
     }
 
-
+/// checks if the array is sorted
+    // for int
     public static boolean isSorted(int[] arr) {
         for (int x = 0; x < arr.length-1; x++) {
             if (arr[x] > arr[x + 1]) {
@@ -96,6 +98,8 @@ public class sorting {
         }
         return true;
     }
+
+/// checks the sums of the numerical arrays if equal
 ///for int
     public static boolean checkSum(int[] before, int[] after) {
         int s1 = 0;
@@ -120,7 +124,7 @@ public class sorting {
         }
         return (s1 == s2);
     }
-
+// finds min # in arr
 ///4 d
     public static int min(double arr[], int ind) {
         int minInd = ind;
@@ -165,6 +169,7 @@ public class sorting {
             }
         }
     }
+    /// copies array into new array
     //4 int
     public static int[] copyArray(int[] arr){
         int[] arr2= new int[arr.length];
