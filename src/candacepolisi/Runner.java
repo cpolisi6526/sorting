@@ -15,7 +15,7 @@ public class Runner {
         long time = System.nanoTime();
         sorting.insertion(arr);
         time = System.nanoTime() - time;
-        System.out.println("Time taken: " + time);
+        System.out.println("Time taken: " + time + " nanoseconds");
     }
 
     public static void checker(String[] arr) {
@@ -90,6 +90,8 @@ public class Runner {
         int[] testArr = sorting.randIntArr(15);
         System.out.println("Copying Array...");
         int[] copyTestArr = sorting.copyArray(testArr);
+        int[] copyTestArr2 = sorting.copyArray(testArr);
+        int[] copyTestArr3 = sorting.copyArray(testArr);
 
         System.out.println("\n+ Sorting using bubbleSort()");
         System.out.println("Time for bubbleSort() :");
@@ -97,12 +99,11 @@ public class Runner {
 
         System.out.println("Sorting using selection()");
         System.out.println("Time for selection() :");
-        checker(copyTestArr);
+        checker(copyTestArr2);
 
 
         System.out.println("Time for insertion() :");
-        checker(copyTestArr);
-
+        checker(copyTestArr3);
 
     }
 }
