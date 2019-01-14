@@ -87,11 +87,9 @@ public class Runner {
         bubbleRunner(sorting.randStringArr(7, 5));
 
         System.out.println("Creating Random Int Array...");
-        int[] testArr = sorting.randIntArr(1000000);
+        int[] testArr = sorting.randIntArr(15);
         System.out.println("Copying Array...");
         int[] copyTestArr = sorting.copyArray(testArr);
-        long timeStart = 0;
-        long timeStop = 0;
 
         System.out.println("\n+ Sorting using bubbleSort()");
         System.out.println("Time for bubbleSort() :");
