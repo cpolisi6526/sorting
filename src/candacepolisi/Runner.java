@@ -86,21 +86,21 @@ public class Runner {
         //  bubbleRunner(new String[]{"i", "am", "very", "Hungry"});
         bubbleRunner(sorting.randStringArr(7, 5));
 
-        System.out.println("Creating Random Int Array...");
+        System.out.println("\nCreating Random Int Array...");
         int[] testArr = sorting.randIntArr(15);
         System.out.println("Copying Array...");
+        //makes three of the same array so could be sorted by each runner
         int[] copyTestArr = sorting.copyArray(testArr);
         int[] copyTestArr2 = sorting.copyArray(testArr);
         int[] copyTestArr3 = sorting.copyArray(testArr);
 
-        System.out.println("\n+ Sorting using bubbleSort()");
+        System.out.println("Sorting using bubbleSort()");
         System.out.println("Time for bubbleSort() :");
         checker(copyTestArr);
 
         System.out.println("Sorting using selection()");
         System.out.println("Time for selection() :");
         checker(copyTestArr2);
-
 
         System.out.println("Time for insertion() :");
         checker(copyTestArr3);
