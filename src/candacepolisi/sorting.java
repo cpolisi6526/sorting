@@ -1,7 +1,9 @@
 package candacepolisi;
 
 public class sorting {
-//// swap switches two values in an array for my purposes a should b the bigger number
+
+
+        //// swap switches two values in an array for my purposes a should b the bigger number
 ///4 int
     public static void swap(int arr[], int a, int b) {
         int temp = arr[a];
@@ -36,6 +38,21 @@ public class sorting {
 
         }
     }
+
+        public static void bubbleSort(int[] arr) {
+            boolean swap = true;
+            while (swap) {
+                swap = false;
+                for (int i = 0; i < arr.length - 1; i++) {
+                    if (arr[i]>arr[i+1]) {
+                        swap(arr, i, i + 1);
+
+                        swap = true;
+                    }
+                }
+
+            }
+        }
 
    /// rand...Arr creates a random arr for each medium
     public static int[] randIntArr(int count) {
@@ -149,6 +166,16 @@ public class sorting {
     }
 /// 4 double
     public static void selection(double[] arr) {
+        int index = 0;
+        for (int i = 0; i < arr.length; i++) {
+            index = min(arr, i);
+            if (arr[i] > arr[index]) {
+                swap(arr, i, index);
+            }
+        }
+    }
+
+    public static void selection(int[] arr) {
         int index = 0;
         for (int i = 0; i < arr.length; i++) {
             index = min(arr, i);
